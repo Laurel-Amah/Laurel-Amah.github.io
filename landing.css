@@ -1,0 +1,258 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Prata&display=swap');          
+        body {
+            background-color: black;
+            color:white;
+            padding-left: 13%;
+            padding-right: 13%;
+        }
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: small;
+            line-height: 125%;
+        }
+
+        h1,h3 {
+            font-family: 'Prata', serif;
+            line-height: 150%;
+            font-weight: lighter;
+            margin-bottom: -1%;
+        } 
+
+        .jon {
+            font-family: 'Prata', serif;
+            line-height: 150%;
+            font-weight: lighter;
+        } 
+
+        .top-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: black;
+            justify-content: space-between;
+            color: white;
+            margin: auto;
+            }
+        
+        .menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-content: center;
+            list-style-type: none;
+            gap: 30px;
+        }
+
+        .menu > li {
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .menu-button-container {
+            display: none;
+            height: 100%;
+            width: 30px;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-botton::before {
+            content: '';
+            margin-top: -8px;
+        }
+
+        .menu-botton::after {
+            content: '';
+            margin-top: 8px;
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-botton::before {
+            margin-top: 0px;
+            transform: rotate(405deg);
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-botton {
+            background: rgba(225, 225, 225, 0);
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-botton::after {
+            margin-top: 0px;
+            transform: rotate(-405deg);
+        }
+
+        .top_center {
+            margin-right: 50%;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+        }
+        .s_n_y {
+            display: flex; 
+            justify-content: space-evenly;
+            gap: 5%;
+        }
+
+        .c_s_n_y {
+            flex: 1;
+        }
+
+        .spen {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .mid_grey {
+            display:inline-grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #2e3038;
+            column-gap: 5%;
+            height: auto;
+            margin: auto;
+            box-shadow: 0 0 0 100vmax #2e3038;
+            clip-path: inset(0 -100vmax);
+        }
+
+        .break {
+            padding: 1%, 2%, 2%, 1%;
+        }
+        .top_button, .bottom_button {
+            background-color: yellow;
+            border: none;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            font-family: 'Prata', serif;
+            font-size:x-small;
+            padding: 15px 32px;
+
+        }
+
+        .bottom {
+            margin-right: 54%;
+        }
+        .bottom_gr {
+            display:flex;
+            justify-content: space-between;
+            background-color: #2e3038;
+            align-items: center;
+            box-shadow: 0 0 0 100vmax #2e3038;
+            clip-path: inset(0 -100vmax);
+        }
+        .sm_logo {
+            width: 20%;
+            height: 20%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-button-container {
+                display: flex;
+            }
+            .menu {
+                position: absolute;
+                top: 0;
+                margin:auto;
+                left: 0;
+                flex-direction: column;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #menu-toggle ~ .menu li {
+                height: 0;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+            }
+
+            #menu-toggle:checked ~ .menu li {
+                border: 1px solid #333;
+                height: 2.5em;
+                padding: 0.5em;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+            }
+
+            .menu > li {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0.5em 0;
+                width: 100%;
+                color: white;
+                background-color: #222;
+            }
+
+            .menu > li:not(:last-child) {
+                border-bottom: 1px solid #444;
+            }
+
+            .logos {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: auto;
+                gap: 5%;
+            }
+
+            .top_center {
+                margin: auto;
+            }
+    
+            .spen {
+                width: 100%;
+                height: auto;                
+            }
+
+            .s_n_y {
+                display: flex; 
+                justify-content: space-around;
+                flex-direction: column;
+            }
+    
+            .c_s_n_y {
+                flex: 1;
+            }
+
+            .mid_grey {
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                background-color: #2e3038;
+                height: auto;
+                margin: auto;
+                box-shadow: 0 0 0 100vmax #2e3038;
+                clip-path: inset(0 -100vmax);
+            }
+
+            .bottom {
+                margin: auto;
+            }
+                        
+            .menu-botton,
+            .menu-botton::before,
+            .menu-botton::after {
+                display: block;
+                background-color: white;
+                position: absolute;
+                height: 4px;
+                width: 30px;
+                transition: transform 400ms cubic-bezier(0.23, 1, 0.320, 1);
+                border-radius: 2px;
+                padding: auto;
+            }
+        }
